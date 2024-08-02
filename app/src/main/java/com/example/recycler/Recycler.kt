@@ -5,7 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.recycler.databinding.ActivityMainBinding
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recycler.databinding.ActivityRecyclerBinding
 
 class Recycler : AppCompatActivity() {
@@ -32,5 +32,24 @@ class Recycler : AppCompatActivity() {
         studentlist.add(Student( 2, "Bjarne", "C++"))
         studentlist.add(Student( 3, "James", "Java"))
 
+        recyclerAdapter=RecyclerAdapter(studentlist,this)
+
+        binding.recycler.layoutManager=LinearLayoutManager(
+           this,LinearLayoutManager.VERTICAL,false)
+        binding.recycler.adapter=recyclerAdapter
+
     }
+
+    fun update(position: Int) {
+
+    }
+
+    fun delete(position: Int) {
+
+    }
+
+
 }
+
+
+
